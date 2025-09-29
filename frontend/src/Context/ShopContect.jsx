@@ -16,7 +16,7 @@ const ShopContextProvider = (props) => {
 
   // Fetch admin added products and merge with assets
   useEffect(() => {
-    fetch("http://localhost:4000/allproducts")
+    fetch("https://e-commerece-site-b39f.onrender.com/allproducts")
       .then((res) => res.json())
       .then((adminProducts) => {
         setAll_Product([...all_product_assets, ...adminProducts]);
@@ -28,7 +28,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
    setCartItems((prev) => ({ ...prev, [itemId]: (prev[itemId] || 0) + 1 }));
    if(localStorage.getItem('auth-token')){
-       fetch('http://localhost:4000/addtocart', {
+       fetch('https://e-commerece-site-b39f.onrender.com/addtocart', {
             method:'POST' ,
             headers:{
               Accept: 'application/form-data' ,
@@ -49,7 +49,7 @@ const ShopContextProvider = (props) => {
       ...prev,
       [itemId]: prev[itemId] > 0 ? prev[itemId] - 1 : 0,}));
       if(localStorage.getItem('auth-token')){
-       fetch('http://localhost:4000/removefromcart', {
+       fetch('https://e-commerece-site-b39f.onrender.com/removefromcart', {
             method:'POST' ,
             headers:{
               Accept: 'application/form-data' ,
