@@ -157,7 +157,7 @@ app.post("/removeproduct",async  (req, res)=>{
 
  // Creating endpoint for user login 
 
- app.post('/', async(req, res)=>{
+ app.post('/login', async(req, res)=>{
     let user = await User.findOne({email:req.body.email});
       if(user){
         const passCompare = req.body.password === user.password;
