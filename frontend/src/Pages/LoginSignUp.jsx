@@ -20,7 +20,7 @@ const LoginSignup = () => {
       await fetch("https://e-commerece-site-b39f.onrender.com/login", {
         method:'POST',
         headers:{
-          Accept:'application/form-data',
+          Accept:'application/json',
          'Content-Type':'application/json',
         },
         body:JSON.stringify(formData),
